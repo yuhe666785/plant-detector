@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Guardian - 你的植物生命探测器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Plant Guardian">Plant Guardian</h1>
+            <p class="subtitle">用¥50的硬件成本，终结你的植物杀手生涯</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">硬件成本(元)</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="98">0</span>
+                    <span class="stat-label">存活率提升(%)</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label">搭建时间(小时)</span>
+                </div>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('demo')">查看实时演示</button>
+        </div>
+        <div class="plant-model">
+            <div class="plant-container">
+                <div class="pot"></div>
+                <div class="stem"></div>
+                <div class="leaf leaf1"></div>
+                <div class="leaf leaf2"></div>
+                <div class="sensor-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <h2>植物死亡三大元凶</h2>
+        <div class="problem-cards">
+            <div class="card">
+                <div class="icon">💧</div>
+                <h3>浇水过度</h3>
+                <p>80%的初学者死于溺爱，根部腐烂不可逆转</p>
+            </div>
+            <div class="card">
+                <div class="icon">☀️</div>
+                <h3>光照不足</h3>
+                <p>办公室党把多肉养成了豆芽</p>
+            </div>
+            <div class="card">
+                <div class="icon">🌡️</div>
+                <h3>环境突变</h3>
+                <p>出差一周，回家只剩盆</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware Section -->
+    <section class="hardware">
+        <h2>硬件清单（总价¥41）</h2>
+        <div class="hardware-grid">
+            <div class="hw-item">
+                <img src="https://img.alicdn.com/imgextra/i4/O1CN01sJ7Y3i1xJjrMIUFso_!!6000000006420-2-tps-500-500.png" alt="ESP8266">
+                <h4>ESP8266 NodeMCU</h4>
+                <span class="price">¥15</span>
+                <p class="desc">大脑+WiFi，低功耗休眠</p>
+            </div>
+            <div class="hw-item">
+                <img src="https://img.alicdn.com/imgextra/i2/O1CN01K5K6zI1QhD0Ky7h3M_!!6000000002008-2-tps-500-500.png" alt="土壤传感器">
+                <h4>电容式传感器</h4>
+                <span class="price">¥8</span>
+                <p class="desc">防腐蚀，寿命长</p>
+            </div>
+            <div class="hw-item">
+                <img src="https://img.alicdn.com/imgextra/i4/O1CN01fU6S4m1q Ky7gFh_!!6000000005493-2-tps-500-500.png" alt="DHT22">
+                <h4>DHT22温湿度</h4>
+                <span class="price">¥5</span>
+                <p class="desc">精准监测环境</p>
+            </div>
+            <div class="hw-item">
+                <img src="https://img.alicdn.com/imgextra/i3/O1CN01p7lK7P1zJjrMIUFso_!!6000000006420-2-tps-500-500.png" alt="光敏电阻">
+                <h4>光敏电阻模块</h4>
+                <span class="price">¥3</span>
+                <p class="desc">检测光照强度</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section class="demo" id="demo">
+        <h2>实时数据演示</h2>
+        <div class="dashboard">
+            <div class="sensor-card soil">
+                <div class="sensor-icon">💧</div>
+                <div class="sensor-value">
+                    <span id="soil-value">--</span>
+                    <small>土壤湿度</small>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="soil-progress"></div>
+                </div>
+                <div class="status" id="soil-status">检测中...</div>
+            </div>
+            
+            <div class="sensor-card temp">
+                <div class="sensor-icon">🌡️</div>
+                <div class="sensor-value">
+                    <span id="temp-value">--</span>°C
+                    <small>环境温度</small>
+              

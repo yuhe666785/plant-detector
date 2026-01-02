@@ -1,0 +1,231 @@
+:root {
+    --primary: #00ff88;
+    --secondary: #00d4ff;
+    --dark: #0a0a0a;
+    --darker: #050505;
+    --light: #e0e0e0;
+    --danger: #ff4757;
+    --warning: #ffa502;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--darker);
+    color: var(--light);
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    background: radial-gradient(ellipse at center, #0a0a0a 0%, #050505 100%);
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 10s infinite linear;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh) rotate(0deg); }
+    to { transform: translateY(-10vh) rotate(360deg); }
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 600px;
+}
+
+.glitch {
+    font-size: 4rem;
+    font-weight: 900;
+    position: relative;
+    text-shadow: 0 0 20px var(--primary);
+    animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+    0%, 100% { text-shadow: 2px 2px var(--primary), -2px -2px var(--secondary); }
+    25% { text-shadow: -2px 2px var(--danger), 2px -2px var(--warning); }
+    50% { text-shadow: 2px -2px var(--primary), -2px 2px var(--secondary); }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin: 1rem 0 3rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border: none;
+    border-radius: 30px;
+    color: var(--dark);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cta-button:hover { transform: scale(1.05); }
+
+/* Plant Model */
+.plant-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+
+.pot {
+    width: 150px;
+    height: 120px;
+    background: linear-gradient(to bottom, #8B4513, #5D2906);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 30px 30px;
+}
+
+.stem {
+    width: 8px;
+    height: 150px;
+    background: var(--primary);
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.leaf {
+    width: 40px;
+    height: 60px;
+    background: radial-gradient(ellipse, #00ff88, #008844);
+    position: absolute;
+    border-radius: 0 100% 0 100%;
+    animation: sway 4s ease-in-out infinite;
+}
+
+.leaf1 { top: 80px; left: 45%; transform: rotate(-30deg); }
+.leaf2 { top: 50px; right: 45%; transform: rotate(30deg) scaleX(-1); }
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-30deg) translateX(0); }
+    50% { transform: rotate(-35deg) translateX(5px); }
+}
+
+.sensor-pulse {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--secondary);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(0, 212, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+}
+
+/* Problem Section */
+.problem {
+    padding: 5rem 2rem;
+    background: var(--dark);
+    text-align: center;
+}
+
+.problem h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.problem-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 280px;
+    border: 1px solid #333;
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+.card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Hardware Section */
+.hardware {
+    padding: 5rem 2rem;
+    background: var(--darker);
+}
+
+.hardware h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.hardware-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.
